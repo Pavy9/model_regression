@@ -41,3 +41,13 @@ docker stop <container_id>
 sudo docker build -t "regression:latest" .
 docker images
 docker run -p 5000:5000 -e port=5000 77cda0b7d124
+
+
+Once code is oushed to GIT, follow below process
+
+1. Go to heroku and create a new app - copy name
+2. Go to settings in github
+3. go to secrets
+4. Add the variables there like heroku mail,api key and project name (same name as created in heroku).
+
+The github push should enable the workflow in github Actions tab 
