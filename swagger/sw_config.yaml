@@ -1,0 +1,50 @@
+swagger : "2.0"
+info:
+  title: Prediction model
+  description : Prediction model
+  version : "0.1"
+consumes:
+  - application/json
+produces:
+  - application/json
+
+basePath : /v1.0
+tags:
+  - name : "General prediction"
+    description : "CRUD"
+schemes:
+  - "http"
+paths:
+  /fileupload:
+    post:
+      operationId : rest_api.base_endpoints.class_instance.file_upload
+      tags : [Prediction]
+      summary : File upload
+      consumes:
+        - mulipart/form-data
+      parameters:
+        - in : formData
+          name: file
+          type: file
+          description : File upload
+      responses:
+        201:
+          description : return records
+          schema:
+            type: object
+  /prediction:
+    get:
+      operationId: rest_api.base_endpoints.class_instance.model_prediction
+      tags : [Prediction]
+      summary: Prediction
+      parameters:
+        - in: query
+          name: accuracy
+          type: string
+          required: false
+          description: model accuracy
+      responses:
+        201:
+          description: return records
+          schema:
+            type: object
