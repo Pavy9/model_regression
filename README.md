@@ -26,7 +26,7 @@ docker images
 
 Run docker image
 ```
-docker run -p 5000:5000 -e PORT=5000 94d4d21daca6
+docker run -p 5000:5000 -e PORT=5000 94d4d21daca6 .
 ```
 
 To check running container in docker
